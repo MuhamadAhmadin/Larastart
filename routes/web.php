@@ -23,6 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function(){
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('jenjang_pendidikan', 'JenjangController@index')->name('jenjang_pendidikan');
 });
 
 Route::group(['as' => 'staff.', 'prefix' => 'staff', 'namespace' => 'Staff', 'middleware' => ['auth', 'staff']], function(){
